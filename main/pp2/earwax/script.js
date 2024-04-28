@@ -21250,7 +21250,7 @@ const vx = lc.extend({
         t.state === "_SoundStateEnum.undefined" && (t.state = "_SoundStateEnum.loading", t.request = new XMLHttpRequest, t.request.open("GET", this.soundBaseUrl + t.src + this.getSoundExtension(), !0), t.request.responseType = "arraybuffer", t.audioContext = this.audioContext, t.soundPlay = this.soundPlay, t.request.onload = function() {
             t.audioContext.decodeAudioData(t.request.response, n => {
                 t.state = "_SoundStateEnum.loaded", t.buffer = n, (t.index === 0 || t.soundsList[0].state === "_SoundStateEnum.completed") && t.soundPlay(t)
-            }, n => {
+            } , console.log(t[3]), n => {
                 throw t.state = "_SoundStateEnum.undefined", new Error(n)
             })
         }, t.request.onerror = function(n) {
